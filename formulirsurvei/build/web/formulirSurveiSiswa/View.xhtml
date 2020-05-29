@@ -10,60 +10,110 @@
             <h:outputText value="Pratinjau Data Survei"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_nisn}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.nisn}" title="#{bundle.ViewFormulirSurveiSiswaTitle_nisn}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_nama}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.nama}" title="#{bundle.ViewFormulirSurveiSiswaTitle_nama}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_alamatSiswa}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.alamatSiswa}" title="#{bundle.ViewFormulirSurveiSiswaTitle_alamatSiswa}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_ttl}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.ttl}" title="#{bundle.ViewFormulirSurveiSiswaTitle_ttl}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_jenisKelamin}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.jenisKelamin}" title="#{bundle.ViewFormulirSurveiSiswaTitle_jenisKelamin}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_namaSekolah}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.namaSekolah}" title="#{bundle.ViewFormulirSurveiSiswaTitle_namaSekolah}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_alamatSekolah}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.alamatSekolah}" title="#{bundle.ViewFormulirSurveiSiswaTitle_alamatSekolah}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan1}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan1}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan1}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan2}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan2}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan2}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan3}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan3}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan3}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan4}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan4}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan4}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan5}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan5}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan5}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan6}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan6}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan6}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan7}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan7}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan7}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan8}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan8}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan8}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan9}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan9}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan9}"/>
-                    <h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan10}"/>
-                    <h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan10}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan10}"/>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{formulirSurveiSiswaController.destroyAndView}" value="#{bundle.ViewFormulirSurveiSiswaDestroyLink}"/>
-                <br />
-                <br />
-                <h:link outcome="Edit" value="#{bundle.ViewFormulirSurveiSiswaEditLink}"/>
-                <br />
-                <h:commandLink action="#{formulirSurveiSiswaController.prepareCreate}" value="#{bundle.ViewFormulirSurveiSiswaCreateLink}" />
-                <br />
-                <h:commandLink action="#{formulirSurveiSiswaController.prepareList}" value="#{bundle.ViewFormulirSurveiSiswaShowAllLink}"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.ViewFormulirSurveiSiswaIndexLink}"/>
-
-            </h:form>
+            <h1 style="text-align:center; margin-top: 50px;">Pratinjau Data Siswa</h1>
+            <h3 style="text-align:center;">Berikut salah satu data yang telah tersimpan.</h3>
+            <div class="container-fluid">
+                <div class="registration-form">
+                    <h:form>
+                        <br />
+                        <h:panelGroup id="messagePanel" layout="block">
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                        <br />
+                        <div>
+                            <table class="table table-sm table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_nisn}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.nisn}" title="#{bundle.ViewFormulirSurveiSiswaTitle_nisn}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_nama}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.nama}" title="#{bundle.ViewFormulirSurveiSiswaTitle_nama}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_alamatSiswa}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.alamatSiswa}" title="#{bundle.ViewFormulirSurveiSiswaTitle_alamatSiswa}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_ttl}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.ttl}" title="#{bundle.ViewFormulirSurveiSiswaTitle_ttl}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_jenisKelamin}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.jenisKelamin}" title="#{bundle.ViewFormulirSurveiSiswaTitle_jenisKelamin}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_namaSekolah}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.namaSekolah}" title="#{bundle.ViewFormulirSurveiSiswaTitle_namaSekolah}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_alamatSekolah}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.alamatSekolah}" title="#{bundle.ViewFormulirSurveiSiswaTitle_alamatSekolah}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan1}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan1}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan1}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan2}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan2}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan2}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan3}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan3}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan3}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan4}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan4}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan4}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan5}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan5}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan5}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan6}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan6}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan6}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan7}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan7}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan7}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan8}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan8}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan8}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan9}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan9}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan9}"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><h:outputText value="#{bundle.ViewFormulirSurveiSiswaLabel_pertanyaan10}"/></td>
+                                        <td><h:outputText value="#{formulirSurveiSiswaController.selected.pertanyaan10}" title="#{bundle.ViewFormulirSurveiSiswaTitle_pertanyaan10}"/></td>
+                                    </tr>
+                                </tbody>            
+                            </table>
+                        </div>
+                        <div class="form-group">
+                            <h:commandLink styleClass="btn btn-block create-account" style="background-color:#DC3545" action="#{formulirSurveiSiswaController.destroyAndView}" value="#{bundle.ViewFormulirSurveiSiswaDestroyLink}"/>
+                        </div>
+                        <div class="form-group">
+                            <h:link styleClass="btn btn-block create-account" style="background-color:#6C757D" outcome="Edit" value="#{bundle.ViewFormulirSurveiSiswaEditLink}"/>
+                        </div>
+                        <div class="form-group">
+                            <h:commandLink styleClass="btn btn-block create-account" action="#{formulirSurveiSiswaController.prepareCreate}" value="#{bundle.ViewFormulirSurveiSiswaCreateLink}" />
+                        </div>
+                        <div class="form-group">
+                            <h:commandLink class="btn btn-block create-account" action="#{formulirSurveiSiswaController.prepareList}" value="#{bundle.ViewFormulirSurveiSiswaShowAllLink}"/>
+                        </div>
+                    </h:form>
+                    <div class="social-media">
+                        <div class="form-group">
+                            <h:link class="btn btn-block create-account"  style="background-color: #5cb85c; text-decoration: white; width: 50%; margin: auto" outcome="/index" value="#{bundle.ListFormulirSurveiSiswaIndexLink}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

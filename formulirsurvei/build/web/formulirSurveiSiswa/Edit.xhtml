@@ -7,59 +7,105 @@
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="EDIT FORMULIR SURVEI SISWA"></h:outputText>
+            <h:outputText value="Ubah Data Survei"></h:outputText>
         </ui:define>
         <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="NISN" for="nisn" />
-                    <h:inputText id="nisn" value="#{formulirSurveiSiswaController.selected.nisn}" title="#{bundle.CreateFormulirSurveiSiswaTitle_nisn}" required="true" requiredMessage="#{bundle.CreateFormulirSurveiSiswaRequiredMessage_nisn}"/>
-                    <h:outputLabel value="Nama" for="nama" />
-                    <h:inputText id="nama" value="#{formulirSurveiSiswaController.selected.nama}" title="#{bundle.CreateFormulirSurveiSiswaTitle_nama}" />
-                    <h:outputLabel value="Alamat Siswa" for="alamatSiswa" />
-                    <h:inputText id="alamatSiswa" value="#{formulirSurveiSiswaController.selected.alamatSiswa}" title="#{bundle.CreateFormulirSurveiSiswaTitle_alamatSiswa}" />
-                    <h:outputLabel value="Tempat Tanggal Lahir" for="ttl" />
-                    <h:inputText id="ttl" value="#{formulirSurveiSiswaController.selected.ttl}" title="#{bundle.CreateFormulirSurveiSiswaTitle_ttl}" />
-                    <h:outputLabel value="Jenis Kelamin" for="jenisKelamin" />
-                    <h:inputText id="jenisKelamin" value="#{formulirSurveiSiswaController.selected.jenisKelamin}" title="#{bundle.CreateFormulirSurveiSiswaTitle_jenisKelamin}" />
-                    <h:outputLabel value="Nama Sekolah" for="namaSekolah" />
-                    <h:inputText id="namaSekolah" value="#{formulirSurveiSiswaController.selected.namaSekolah}" title="#{bundle.CreateFormulirSurveiSiswaTitle_namaSekolah}" />
-                    <h:outputLabel value="Alamat Sekolah" for="alamatSekolah" />
-                    <h:inputText id="alamatSekolah" value="#{formulirSurveiSiswaController.selected.alamatSekolah}" title="#{bundle.CreateFormulirSurveiSiswaTitle_alamatSekolah}" />
-                    <h:outputLabel value="Apa rencana Anda setelah lulus? Apakah Anda ingin bekerja atau kuliah?" for="pertanyaan1" />
-                    <h:inputText id="pertanyaan1" value="#{formulirSurveiSiswaController.selected.pertanyaan1}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan1}" />
-                    <h:outputLabel value="Apa saja hal-hal yang menurut Anda penting untuk disiapkan dalam menghadapi ujian masuk perguruan tinggi?" for="pertanyaan2" />
-                    <h:inputText id="pertanyaan2" value="#{formulirSurveiSiswaController.selected.pertanyaan2}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan2}" />
-                    <h:outputLabel value="Apakah Anda menyimpan hasil try out ujian masuk perguruan tinggi milik Anda? Apa yang Anda lakukan dengan hasil try out yang Anda simpan?" for="pertanyaan3" />
-                    <h:inputText id="pertanyaan3" value="#{formulirSurveiSiswaController.selected.pertanyaan3}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan3}" />
-                    <h:outputLabel value="Bagaimana cara Anda memperbaiki materi yang belum Anda kuasai?" for="pertanyaan4" />
-                    <h:inputText id="pertanyaan4" value="#{formulirSurveiSiswaController.selected.pertanyaan4}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan4}" />
-                    <h:outputLabel value="Menurut Anda, adakah cara yang lebih baik untuk mempersiapkan ujian masuk perguruan tinggi?" for="pertanyaan5" />
-                    <h:inputText id="pertanyaan5" value="#{formulirSurveiSiswaController.selected.pertanyaan5}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan5}" />
-                    <h:outputLabel value="Seberapa besar pengaruh lingkungan sekolah terhadap pendidikan yang Anda tempuh?" for="pertanyaan6" />
-                    <h:inputText id="pertanyaan6" value="#{formulirSurveiSiswaController.selected.pertanyaan6}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan6}" />
-                    <h:outputLabel value="Seberapa besar pengaruh teman-teman sekolah Anda terhadap pendidikan yang Anda tempuh?" for="pertanyaan7" />
-                    <h:inputText id="pertanyaan7" value="#{formulirSurveiSiswaController.selected.pertanyaan7}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan7}" />
-                    <h:outputLabel value="Seperti apa sistem manajemen waktu Anda?" for="pertanyaan8" />
-                    <h:inputText id="pertanyaan8" value="#{formulirSurveiSiswaController.selected.pertanyaan8}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan8}" />
-                    <h:outputLabel value="Apakah impian terbesar Anda dan sudah sejauh mana pencapaian Anda?" for="pertanyaan9" />
-                    <h:inputText id="pertanyaan9" value="#{formulirSurveiSiswaController.selected.pertanyaan9}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan9}" />
-                    <h:outputLabel value="Apakah orang tua mendukung impian Anda? Seberapa besar pengaruhnya bagi Anda?" for="pertanyaan10" />
-                    <h:inputText id="pertanyaan10" value="#{formulirSurveiSiswaController.selected.pertanyaan10}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan10}" />
-                </h:panelGrid>
-                <h:commandLink action="#{formulirSurveiSiswaController.update}" value="#{bundle.EditFormulirSurveiSiswaSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditFormulirSurveiSiswaViewLink}"/>
-                <br />
-                <h:commandLink action="#{formulirSurveiSiswaController.prepareList}" value="#{bundle.EditFormulirSurveiSiswaShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditFormulirSurveiSiswaIndexLink}" />
-            </h:form>
+            <h1 style="text-align:center; margin-top: 50px;">Pratinjau Data Siswa</h1>
+            <h3 style="text-align:center;">Berikut salah satu data yang telah tersimpan.</h3>
+            <div class="container-fluid">
+                <div class="registration-form">
+                    <h:form>
+                        <br />
+                        <h:panelGroup id="messagePanel" layout="block">
+                            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                        </h:panelGroup>
+                        <br />
+                        <div class="form-group">   
+                            <h:outputLabel value="NISN" for="nisn" />
+                            <h:inputText styleClass="form-control item" id="nisn" value="#{formulirSurveiSiswaController.selected.nisn}" title="#{bundle.CreateFormulirSurveiSiswaTitle_nisn}" required="true" requiredMessage="#{bundle.CreateFormulirSurveiSiswaRequiredMessage_nisn}"/>
+                        </div>        
+                        <div class="form-group">       
+                            <h:outputLabel value="Nama" for="nama" />
+                            <h:inputText styleClass="form-control item" id="nama" value="#{formulirSurveiSiswaController.selected.nama}" title="#{bundle.CreateFormulirSurveiSiswaTitle_nama}" />
+                        </div>        
+                        <div class="form-group">       
+                            <h:outputLabel value="Alamat Siswa" for="alamatSiswa" />
+                            <h:inputText styleClass="form-control item" id="alamatSiswa" value="#{formulirSurveiSiswaController.selected.alamatSiswa}" title="#{bundle.CreateFormulirSurveiSiswaTitle_alamatSiswa}" />
+                        </div>        
+                        <div class="form-group">       
+                            <h:outputLabel value="Tempat Tanggal Lahir" for="ttl" />
+                            <h:inputText styleClass="form-control item" id="ttl" value="#{formulirSurveiSiswaController.selected.ttl}" title="#{bundle.CreateFormulirSurveiSiswaTitle_ttl}" />
+                        </div>        
+                        <div class="form-group">       
+                            <h:outputLabel value="Jenis Kelamin" for="jenisKelamin" />
+                            <h:inputText styleClass="form-control item" id="jenisKelamin" value="#{formulirSurveiSiswaController.selected.jenisKelamin}" title="#{bundle.CreateFormulirSurveiSiswaTitle_jenisKelamin}" />
+                        </div>        
+                        <div class="form-group">       
+                            <h:outputLabel value="Nama Sekolah" for="namaSekolah" />
+                            <h:inputText styleClass="form-control item" id="namaSekolah" value="#{formulirSurveiSiswaController.selected.namaSekolah}" title="#{bundle.CreateFormulirSurveiSiswaTitle_namaSekolah}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Alamat Sekolah" for="alamatSekolah" />
+                            <h:inputText styleClass="form-control item" id="alamatSekolah" value="#{formulirSurveiSiswaController.selected.alamatSekolah}" title="#{bundle.CreateFormulirSurveiSiswaTitle_alamatSekolah}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Apa rencana Anda setelah lulus? Apakah Anda ingin bekerja atau kuliah?" for="pertanyaan1" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan1" value="#{formulirSurveiSiswaController.selected.pertanyaan1}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan1}" />
+                        </div>        
+                        <div class="form-group"> 
+                            <h:outputLabel value="Apa saja hal-hal yang menurut Anda penting untuk disiapkan dalam menghadapi ujian masuk perguruan tinggi?" for="pertanyaan2" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan2" value="#{formulirSurveiSiswaController.selected.pertanyaan2}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan2}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Apakah Anda menyimpan hasil try out ujian masuk perguruan tinggi milik Anda? Apa yang Anda lakukan dengan hasil try out yang Anda simpan?" for="pertanyaan3" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan3" value="#{formulirSurveiSiswaController.selected.pertanyaan3}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan3}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Bagaimana cara Anda memperbaiki materi yang belum Anda kuasai?" for="pertanyaan4" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan4" value="#{formulirSurveiSiswaController.selected.pertanyaan4}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan4}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Menurut Anda, adakah cara yang lebih baik untuk mempersiapkan ujian masuk perguruan tinggi?" for="pertanyaan5" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan5" value="#{formulirSurveiSiswaController.selected.pertanyaan5}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan5}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Seberapa besar pengaruh lingkungan sekolah terhadap pendidikan yang Anda tempuh?" for="pertanyaan6" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan6" value="#{formulirSurveiSiswaController.selected.pertanyaan6}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan6}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Seberapa besar pengaruh teman-teman sekolah Anda terhadap pendidikan yang Anda tempuh?" for="pertanyaan7" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan7" value="#{formulirSurveiSiswaController.selected.pertanyaan7}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan7}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Seperti apa sistem manajemen waktu Anda?" for="pertanyaan8" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan8" value="#{formulirSurveiSiswaController.selected.pertanyaan8}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan8}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Apakah impian terbesar Anda dan sudah sejauh mana pencapaian Anda?" for="pertanyaan9" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan9" value="#{formulirSurveiSiswaController.selected.pertanyaan9}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan9}" />
+                        </div>        
+                        <div class="form-group">
+                            <h:outputLabel value="Apakah orang tua mendukung impian Anda? Seberapa besar pengaruhnya bagi Anda?" for="pertanyaan10" />
+                            <h:inputText styleClass="form-control item" id="pertanyaan10" value="#{formulirSurveiSiswaController.selected.pertanyaan10}" title="#{bundle.CreateFormulirSurveiSiswaTitle_pertanyaan10}" />
+                        </div>
+                                
+                        <div class="form-group">
+                            <h:commandLink styleClass="btn btn-block create-account" style="background-color:#6C757D" action="#{formulirSurveiSiswaController.update}" value="#{bundle.EditFormulirSurveiSiswaSaveLink}"/>
+                        </div>
+                        <div class="form-group">
+                            <h:link styleClass="btn btn-block create-account" outcome="View" value="#{bundle.EditFormulirSurveiSiswaViewLink}"/>
+                        </div>
+                        <div class="form-group">
+                            <h:commandLink styleClass="btn btn-block create-account" action="#{formulirSurveiSiswaController.prepareList}" value="#{bundle.EditFormulirSurveiSiswaShowAllLink}" immediate="true"/>
+                        </div>
+                    </h:form>
+                    <div class="social-media">
+                        <div class="form-group">
+                            <h:link class="btn btn-block create-account"  style="background-color: #5cb85c; text-decoration: white; width: 50%; margin: auto" outcome="/index" value="#{bundle.EditFormulirSurveiSiswaIndexLink}"/>
+                        </div>
+                    </div>
+                </div>    
+            </div>        
         </ui:define>
     </ui:composition>
 
